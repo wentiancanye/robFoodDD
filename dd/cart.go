@@ -104,6 +104,7 @@ func (s *DingdongSession) CheckCart() error {
 	req.Header.Set("ddmc-app-client-id", "3")
 	req.Header.Set("ddmc-api-version", "9.49.0")
 	req.Header.Set("ddmc-station-id", s.Address.StationId)
+	req.Header.Set("ddmc-uid", "60f38f3f59e7120001a9448c")
 	req.Header.Set("origin", "https://wx.m.ddxq.mobi")
 	req.Header.Set("x-requested-with", "com.yaya.zone")
 	req.Header.Set("sec-fetch-site", "same-site")

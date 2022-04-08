@@ -9,7 +9,7 @@ import (
 
 func main() {
 	session := dd.DingdongSession{}
-	err := session.InitSession("DDXQSESSID=xxxxxxxxxxx", "xxxxxxxxxxxxx")
+	err := session.InitSession("DDXQSESSID="+dd.GetSessid(), "xxxxxxxxxxxxx")
 	if err != nil {
 		fmt.Println(err)
 		return
@@ -52,6 +52,7 @@ cartLoop:
 			err, multiReserveTime := session.GetMultiReserveTime()
 			if err != nil {
 				fmt.Println(err)
+				time.Sleep(1 * time.Second)
 				continue
 			}
 			if len(multiReserveTime) == 0 {
@@ -71,18 +72,20 @@ cartLoop:
 					switch err {
 					case nil:
 						fmt.Println("抢购成功，请前往app付款！")
-						for true {
-							err = session.PushSuccess()
-							if err == nil {
-								break
-							} else {
-								fmt.Println(err)
-							}
-							time.Sleep(1 * time.Second)
-						}
+						//for true {
+						//	err = session.PushSuccess()
+						//	if err == nil {
+						//		break
+						//	} else {
+						//		fmt.Println(err)
+						//	}
+						//	time.Sleep(1 * time.Second)
+						//}
 						return
 					case dd.TimeExpireErr:
 						fmt.Printf("[%s] %s\n", reserveTime.SelectMsg, err)
+						fmt.Println(dd.TimeExpireErr)
+						// 这里有疑惑，看是否需要重新循环下一送达时间
 						break OrderLoop
 					case dd.ProdInfoErr:
 						fmt.Println(err)

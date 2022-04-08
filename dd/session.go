@@ -38,7 +38,7 @@ func (s *DingdongSession) InitSession(cookie string, barkId string) error {
 	}
 	var index int
 	for true {
-		fmt.Println("请输入地址序号（0, 1, 2...)：")
+		fmt.Print("请输入地址序号（0, 1, 2...)：")
 		stdin := bufio.NewReader(os.Stdin)
 		_, err := fmt.Fscanln(stdin, &index)
 		if err != nil {
@@ -52,7 +52,7 @@ func (s *DingdongSession) InitSession(cookie string, barkId string) error {
 	s.Address = addrList[index]
 	fmt.Println("########## 选择支付方式 ##########")
 	for true {
-		fmt.Println("请输入支付方式序号（1：支付宝 2：微信)：")
+		fmt.Print("请输入支付方式序号（1：支付宝 2：微信)：")
 		stdin := bufio.NewReader(os.Stdin)
 		_, err := fmt.Fscanln(stdin, &index)
 		if err != nil {
@@ -69,7 +69,7 @@ func (s *DingdongSession) InitSession(cookie string, barkId string) error {
 	}
 	fmt.Println("########## 选择购物车商品结算模式 ##########")
 	for true {
-		fmt.Println("请输入结算模式序号（1：结算所有有效商品（不包括换购） 2：结算所有勾选商品（包括换购)：")
+		fmt.Print("请输入结算模式序号（1：结算所有有效商品（不包括换购） 2：结算所有勾选商品（包括换购)：")
 		stdin := bufio.NewReader(os.Stdin)
 		_, err := fmt.Fscanln(stdin, &index)
 		if err != nil {
@@ -85,4 +85,19 @@ func (s *DingdongSession) InitSession(cookie string, barkId string) error {
 		}
 	}
 	return nil
+}
+
+func GetSessid() (Res string) {
+	for true {
+		fmt.Print("请输入DDXQSESSID：")
+		stdin := bufio.NewReader(os.Stdin)
+		n, err := fmt.Fscanln(stdin, &Res)
+		if err != nil || n == 0 {
+			fmt.Println("输入有误，请重新输入！")
+			continue
+		} else {
+			break
+		}
+	}
+	return Res
 }
