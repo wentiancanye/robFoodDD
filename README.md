@@ -25,5 +25,6 @@ err := session.InitSession("DDXQSESSID=xxxxxxxxxxx", "xxxxxxxxxxxxx")
 
 因违法违规等不当使用导致的后果与本人无关，如有任何问题可联系本人删除！
 
-## Cookie
-先访问这个 [链接](https://activity.m.ddxq.mobi/#/coupon?code=VERxg&h5_source=caocao&btnType=jumpApp&path=https%3A%2F%2Fu.100.me%2Fm%2Fmaicai&random=4)，再访问[这个链接](https://activity.m.ddxq.mobi/#/coupon)
+## Cookie 以下方式任选其一
+1 先访问这个 [链接](https://activity.m.ddxq.mobi/#/coupon?code=VERxg&h5_source=caocao&btnType=jumpApp&path=https%3A%2F%2Fu.100.me%2Fm%2Fmaicai&random=4)，再访问[这个链接](https://activity.m.ddxq.mobi/#/coupon)
+2 微信打开小程序，使用Charles抓取
