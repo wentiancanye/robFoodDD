@@ -27,4 +27,5 @@ err := session.InitSession("DDXQSESSID=xxxxxxxxxxx", "xxxxxxxxxxxxx")
 
 ## Cookie 以下方式任选其一
 1 先访问这个 [链接](https://activity.m.ddxq.mobi/#/coupon?code=VERxg&h5_source=caocao&btnType=jumpApp&path=https%3A%2F%2Fu.100.me%2Fm%2Fmaicai&random=4)，再访问[这个链接](https://activity.m.ddxq.mobi/#/coupon)
+
 2 微信打开小程序，使用Charles抓取
